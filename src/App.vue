@@ -34,32 +34,32 @@ onUnmounted(() => unsubscribeFromAuth());
 <template>
     <div class="flex min-h-screen flex-col">
         <header class="bg-slate-700 text-white">
-            <nav class="flex items-center gap-8 p-4" aria-label="Navegación principal">
+            <nav class="flex flex-wrap items-center gap-x-8 gap-y-2 p-4" aria-label="Navegación principal">
                 <RouterLink to="/" class="text-xl">Entre líneas</RouterLink>
-                <ul class="flex gap-4">
+                <ul class="flex flex-wrap gap-x-4 gap-y-2">
                     <li>
-                        <RouterLink to="/">Inicio</RouterLink>
+                        <RouterLink to="/" class="nav-link">Inicio</RouterLink>
                     </li>
 
                     <template v-if="user.id !== null">
                         <li>
-                            <RouterLink to="/nueva-resena">Nueva reseña</RouterLink>
+                            <RouterLink to="/nueva-resena" class="nav-link">Nueva reseña</RouterLink>
                         </li>
                         <li>
-                            <RouterLink to="/mi-perfil">Mi perfil</RouterLink>
+                            <RouterLink to="/mi-perfil" class="nav-link">Mi perfil</RouterLink>
                         </li>
                         <li>
                             <form action="#" @submit.prevent="handleLogout">
-                                <button type="submit">{{ user.email }} (Cerrar sesión)</button>
+                                <button type="submit" class="nav-link">{{ user.email }} (Cerrar sesión)</button>
                             </form>
                         </li>
                     </template>
                     <template v-else>
                         <li>
-                            <RouterLink to="/ingresar">Ingresar</RouterLink>
+                            <RouterLink to="/ingresar" class="nav-link">Ingresar</RouterLink>
                         </li>
                         <li>
-                            <RouterLink to="/crear-cuenta">Crear cuenta</RouterLink>
+                            <RouterLink to="/crear-cuenta" class="nav-link">Crear cuenta</RouterLink>
                         </li>
                     </template>
                 </ul>
