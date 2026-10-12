@@ -98,7 +98,7 @@ onUnmounted(() => unsubscribeFromAuth());
 
         <button
             type="submit"
-            class="px-4 py-2 rounded bg-slate-700 text-white disabled:opacity-50"
+            class="btn-primary"
             :disabled="loading"
         >
             {{ loading ? 'Guardando...' : 'Guardar cambios' }}
@@ -127,15 +127,13 @@ onUnmounted(() => unsubscribeFromAuth());
 
             <button
                 type="submit"
-                class="px-4 py-2 rounded bg-slate-700 text-white disabled:opacity-50"
+                class="btn-primary"
                 :disabled="passwordLoading"
             >
                 {{ passwordLoading ? 'Cambiando...' : 'Cambiar contraseña' }}
             </button>
-
         </form>
     </section>
-    
     <p class="mt-8">
         <RouterLink to="/mi-perfil" class="text-blue-700 underline">Volver a mi perfil</RouterLink>
     </p>

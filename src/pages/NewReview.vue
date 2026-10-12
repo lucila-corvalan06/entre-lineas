@@ -131,7 +131,7 @@ onUnmounted(() => unsubscribeFromAuth());
 
         <button
             type="submit"
-            class="px-4 py-2 rounded bg-slate-700 text-white disabled:opacity-50"
+            class="btn-primary"
             :disabled="loading"
         >
             {{ loading ? 'Publicando...' : 'Publicar reseña' }}
