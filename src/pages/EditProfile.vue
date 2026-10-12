@@ -78,7 +78,7 @@ onUnmounted(() => unsubscribeFromAuth());
             <input
                 type="text"
                 id="display_name"
-                class="w-full p-2 border rounded"
+                class="form-field"
                 autocomplete="nickname"
                 v-model="profile.display_name"
             >
@@ -87,7 +87,7 @@ onUnmounted(() => unsubscribeFromAuth());
             <label for="bio" class="block mb-2">Biografía</label>
             <textarea
                 id="bio"
-                class="w-full p-2 border rounded"
+                class="form-field"
                 rows="4"
                 v-model="profile.bio"
             ></textarea>
@@ -114,7 +114,7 @@ onUnmounted(() => unsubscribeFromAuth());
                 <input
                     type="password"
                     id="new-password"
-                    class="w-full p-2 border rounded"
+                    class="form-field"
                     autocomplete="new-password"
                     minlength="6"
                     required

@@ -77,7 +77,7 @@ onUnmounted(() => unsubscribeFromAuth());
             <input
                 type="text"
                 id="book_title"
-                class="w-full p-2 border rounded"
+                class="form-field"
                 required
                 v-model="review.book_title"
             >
@@ -87,7 +87,7 @@ onUnmounted(() => unsubscribeFromAuth());
             <input
                 type="text"
                 id="author"
-                class="w-full p-2 border rounded"
+                class="form-field"
                 required
                 v-model="review.author"
             >
@@ -96,7 +96,7 @@ onUnmounted(() => unsubscribeFromAuth());
             <label for="genre" class="block mb-2">Género</label>
             <select
                 id="genre"
-                class="w-full p-2 border rounded"
+                class="form-field"
                 required
                 v-model="review.genre"
             >
@@ -108,7 +108,7 @@ onUnmounted(() => unsubscribeFromAuth());
             <label for="rating" class="block mb-2">Puntaje</label>
             <select
                 id="rating"
-                class="w-full p-2 border rounded"
+                class="form-field"
                 required
                 v-model.number="review.rating"
             >
@@ -120,7 +120,7 @@ onUnmounted(() => unsubscribeFromAuth());
             <label for="body" class="block mb-2">Tu reseña</label>
             <textarea
                 id="body"
-                class="w-full p-2 border rounded"
+                class="form-field"
                 rows="6"
                 required
                 v-model="review.body"

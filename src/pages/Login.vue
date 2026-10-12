@@ -42,7 +42,7 @@ async function handleSubmit() {
             <input
                 type="email"
                 id="email"
-                class="w-full p-2 border rounded"
+                class="form-field"
                 autocomplete="email"
                 required
                 v-model="user.email"
@@ -53,7 +53,7 @@ async function handleSubmit() {
             <input
                 type="password"
                 id="password"
-                class="w-full p-2 border rounded"
+                class="form-field"
                 autocomplete="current-password"
                 required
                 v-model="user.password"
