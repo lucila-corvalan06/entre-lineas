@@ -135,6 +135,6 @@ onUnmounted(() => unsubscribeFromAuth());
         </form>
     </section>
     <p class="mt-8">
-        <RouterLink to="/mi-perfil" class="text-blue-700 underline">Volver a mi perfil</RouterLink>
+        <RouterLink to="/mi-perfil" class="link">Volver a mi perfil</RouterLink>
     </p>
 </template>
