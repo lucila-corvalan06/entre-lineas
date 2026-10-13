@@ -12,9 +12,12 @@
     .nav-link {
         @apply cursor-pointer underline-offset-4 hover:text-sage focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-cream aria-[current=page]:underline;
     }
-
     .btn-primary {
         @apply cursor-pointer rounded bg-terracotta px-4 py-2 text-white hover:bg-brown focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brown disabled:cursor-not-allowed disabled:opacity-50;
+    }
+
+    .btn-secondary {
+        @apply inline-block cursor-pointer rounded border-2 border-brown px-4 py-2 text-center font-semibold text-brown hover:bg-brown hover:text-cream focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-terracotta;
     }
 
     .form-field {
@@ -22,11 +25,13 @@
     }
 
     .link {
-        @apply text-blue-700 underline underline-offset-2 hover:text-blue-900 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-700;
+        @apply text-brown underline decoration-terracotta decoration-2 underline-offset-4 hover:decoration-brown focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-terracotta;
     }
+
     .msg-error {
         @apply text-red-700;
     }
+
     .msg-success {
         @apply text-green-700;
     }

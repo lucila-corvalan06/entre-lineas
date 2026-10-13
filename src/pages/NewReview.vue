@@ -127,7 +127,7 @@ onUnmounted(() => unsubscribeFromAuth());
             ></textarea>
         </div>
 
-        <p v-if="errorMessage" role="alert" class="mb-3 text-red-700">{{ errorMessage }}</p>
+        <p v-if="errorMessage" role="alert" class="mb-3 msg-error">{{ errorMessage }}</p>
 
         <button
             type="submit"

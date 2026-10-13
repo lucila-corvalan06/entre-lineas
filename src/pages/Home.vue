@@ -37,7 +37,7 @@ onUnmounted(() => unsubscribeFromNewReviews());
     <BaseH1>Últimas reseñas</BaseH1>
 
     <p v-if="loading" role="status">Cargando reseñas...</p>
-    <p v-else-if="errorMessage" role="alert" class="text-red-700">{{ errorMessage }}</p>
+    <p v-else-if="errorMessage" role="alert" class="msg-error">{{ errorMessage }}</p>
     <p v-else-if="reviews.length === 0">Todavía no hay reseñas. ¡Publicá la primera!</p>
 
     <section v-else>

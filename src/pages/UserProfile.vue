@@ -34,7 +34,7 @@ onMounted(async () => {
 
 <template>
     <p v-if="loading" role="status">Cargando perfil...</p>
-    <p v-else-if="errorMessage" role="alert" class="text-red-700">{{ errorMessage }}</p>
+    <p v-else-if="errorMessage" role="alert" class="msg-error">{{ errorMessage }}</p>
     <p v-else-if="!profile">No encontramos a ese usuario.</p>
 
     <template v-else>
