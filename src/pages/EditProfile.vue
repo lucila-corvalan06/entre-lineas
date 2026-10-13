@@ -94,8 +94,8 @@ onUnmounted(() => unsubscribeFromAuth());
             ></textarea>
         </div>
 
-        <p v-if="errorMessage" role="alert" class="mb-3 text-red-700">{{ errorMessage }}</p>
-        <p v-if="successMessage" role="status" class="mb-3 text-green-700">{{ successMessage }}</p>
+        <p v-if="errorMessage" role="alert" class="mb-3 msg-error">{{ errorMessage }}</p>
+        <p v-if="successMessage" role="status" class="mb-3 msg-success">{{ successMessage }}</p>
 
         <button
             type="submit"
@@ -124,8 +124,8 @@ onUnmounted(() => unsubscribeFromAuth());
                 >
             </div>
 
-            <p v-if="passwordErrorMessage" role="alert" class="mb-3 text-red-700">{{ passwordErrorMessage }}</p>
-            <p v-if="passwordSuccessMessage" role="status" class="mb-3 text-green-700">{{ passwordSuccessMessage }}</p>
+            <p v-if="passwordErrorMessage" role="alert" class="mb-3 msg-error">{{ passwordErrorMessage }}</p>
+            <p v-if="passwordSuccessMessage" role="status" class="mb-3 msg-success">{{ passwordSuccessMessage }}</p>
 
             <button
                 type="submit"

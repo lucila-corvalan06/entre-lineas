@@ -10,7 +10,7 @@ import { getReviewsByUserId } from '../services/reviews.js';
 const route = useRoute();
 
 const profile = ref(null);
-const reviews = ref ([]);
+const reviews = ref([]);
 const loading = ref(true);
 const errorMessage = ref('');
 
@@ -18,7 +18,7 @@ onMounted(async () => {
     try {
         const userId = route.params.id;
 
-        //Pedimos el perfil y las reseñas a la vez, porque no dependen una de otra.
+        // Pedimos el perfil y las reseñas a la vez, porque no dependen una de otra.
         [profile.value, reviews.value] = await Promise.all([
             getUserProfileById(userId),
             getReviewsByUserId(userId),
@@ -33,16 +33,18 @@ onMounted(async () => {
 </script>
 
 <template>
-    <p v-if="loading">Cargando perfil...</p>
+    <p v-if="loading" role="status">Cargando perfil...</p>
     <p v-else-if="errorMessage" role="alert" class="text-red-700">{{ errorMessage }}</p>
     <p v-else-if="!profile">No encontramos a ese usuario.</p>
 
     <template v-else>
+        <section class="mx-auto mt-8 mb-8 max-w-2xl rounded-lg border border-sage bg-white p-6 shadow-sm">
         <BaseH1>{{ profile.display_name || profile.email }}</BaseH1>
 
-        <p class="mb-6">{{ profile.bio || 'Este usuario todavía no escribió su biografía.' }}</p>
+        <p>{{ profile.bio || 'Este usuario todavía no escribió su biografía.' }}</p>
+        </section>
 
-        <section aria-labelledby="reviews-title">
+        <section class="mx-auto max-w-2xl" aria-labelledby="reviews-title">
             <h2 id="reviews-title" class="mb-4 text-2xl">Sus reseñas</h2>
 
             <p v-if="reviews.length === 0">Todavía no publicó ninguna reseña.</p>

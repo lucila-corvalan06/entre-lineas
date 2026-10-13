@@ -21,17 +21,19 @@ onUnmounted(() => unsubscribeFromAuth());
 </script>
 
 <template>
-    <div class="flex items-end gap-4">
-        <BaseH1>Mi perfil</BaseH1>
-        <RouterLink to="/mi-perfil/editar" class="link mb-4">Editar</RouterLink>
-    </div>
+    <section class="mx-auto mt-8 max-w-2xl rounded-lg border border-sage bg-white p-6 shadow-sm">
+        <div class="flex items-end gap-4">
+            <BaseH1>Mi perfil</BaseH1>
+            <RouterLink to="/mi-perfil/editar" class="link mb-4">Editar</RouterLink>
+        </div>
 
-    <p class="mb-4">{{ user.bio || 'Todavía no escribiste tu biografía.' }}</p>
+        <p class="mb-4">{{ user.bio || 'Todavía no escribiste tu biografía.' }}</p>
 
-    <dl>
-        <dt class="mb-0.5 font-bold">Email</dt>
-        <dd class="mb-3 ps-4">{{ user.email }}</dd>
-        <dt class="mb-0.5 font-bold">Nombre de usuario</dt>
-        <dd class="mb-3 ps-4">{{ user.display_name || 'Sin especificar' }}</dd>
-    </dl>
+        <dl>
+            <dt class="mb-0.5 font-bold">Email</dt>
+            <dd class="mb-3 ps-4">{{ user.email }}</dd>
+            <dt class="mb-0.5 font-bold">Nombre de usuario</dt>
+            <dd class="mb-3 ps-4">{{ user.display_name || 'Sin especificar' }}</dd>
+        </dl>
+    </section>
 </template>

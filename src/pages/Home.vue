@@ -40,7 +40,9 @@ onUnmounted(() => unsubscribeFromNewReviews());
     <p v-else-if="errorMessage" role="alert" class="text-red-700">{{ errorMessage }}</p>
     <p v-else-if="reviews.length === 0">Todavía no hay reseñas. ¡Publicá la primera!</p>
 
-    <section v-else aria-label="Listado de reseñas">
+    <section v-else>
+        <h2 class="sr-only">Listado de reseñas</h2>
+
         <ReviewCard
             v-for="review in reviews"
             :key="review.id"
