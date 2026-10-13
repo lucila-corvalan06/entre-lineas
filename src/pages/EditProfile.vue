@@ -70,6 +70,7 @@ onUnmounted(() => unsubscribeFromAuth());
 </script>
 
 <template>
+    <section class="mx-auto mt-8 max-w-md rounded-lg border border-sage bg-white p-6 shadow-sm">
     <BaseH1>Editar mi perfil</BaseH1>
 
     <form action="#" @submit.prevent="handleSubmit">
@@ -98,14 +99,15 @@ onUnmounted(() => unsubscribeFromAuth());
 
         <button
             type="submit"
-            class="btn-primary"
+            class="btn-primary w-full"
             :disabled="loading"
         >
             {{ loading ? 'Guardando...' : 'Guardar cambios' }}
         </button>
     </form>
+    </section>
 
-    <section class="mt-8" aria-labelledby="password-title">
+    <section class="mx-auto mt-6 max-w-md rounded-lg border border-sage bg-white p-6 shadow-sm" aria-labelledby="password-title">
         <h2 id="password-title" class="mb-4 text-2xl">Cambiar contraseña</h2>
 
         <form action="#" @submit.prevent="handlePasswordSubmit">
@@ -127,14 +129,14 @@ onUnmounted(() => unsubscribeFromAuth());
 
             <button
                 type="submit"
-                class="btn-primary"
+                class="btn-primary w-full"
                 :disabled="passwordLoading"
             >
                 {{ passwordLoading ? 'Cambiando...' : 'Cambiar contraseña' }}
             </button>
         </form>
     </section>
-    <p class="mt-8">
+    <p class="mx-auto mt-6 max-w-md">
         <RouterLink to="/mi-perfil" class="link">Volver a mi perfil</RouterLink>
     </p>
 </template>

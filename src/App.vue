@@ -1,9 +1,10 @@
 <script setup>
-import { onMounted, onUnmounted, ref } from 'vue';
-import { useRouter } from 'vue-router';
+import { onMounted, onUnmounted, ref, watch } from 'vue';
+import { useRouter, useRoute } from 'vue-router';
 import { logout, subscribeToAuthUserChanges } from './services/auth.js';
 
 const router = useRouter();
+const route = useRoute();
 
 const user = ref({
     id: null,
@@ -11,6 +12,9 @@ const user = ref({
     display_name: null,
     bio: null,
 });
+const menuOpen = ref(false);
+
+watch(() => route.path, () => menuOpen.value = false);
 
 // Función para cancelar la suscripción al estado de autenticación.
 let unsubscribeFromAuth = () => {};
@@ -20,7 +24,6 @@ async function handleLogout() {
         await logout();
         router.push('/ingresar');
     } catch (error) {
-        
     }
 }
 
@@ -32,11 +35,29 @@ onUnmounted(() => unsubscribeFromAuth());
 </script>
 
 <template>
-    <div class="flex min-h-screen flex-col">
-        <header class="bg-slate-700 text-white">
-            <nav class="flex flex-wrap items-center gap-x-8 gap-y-2 p-4" aria-label="Navegación principal">
-                <RouterLink to="/" class="text-xl">Entre líneas</RouterLink>
-                <ul class="flex flex-wrap gap-x-4 gap-y-2">
+    <div class="flex min-h-screen flex-col bg-cream text-brown">
+        <header class="bg-brown text-cream">
+            <nav class="p-4 md:flex md:items-center md:gap-8" aria-label="Navegación principal">
+                <div class="flex items-center justify-between">
+                    <RouterLink to="/" class="text-xl">Entre líneas</RouterLink>
+
+                    <button
+                        type="button"
+                        class="nav-link md:hidden"
+                        :aria-expanded="menuOpen"
+                        aria-controls="main-menu"
+                        @click="menuOpen = !menuOpen"
+                    >
+                        <span class="sr-only">{{ menuOpen ? 'Cerrar menú' : 'Abrir menú' }}</span>
+                        <span aria-hidden="true">☰</span>
+                    </button>
+                </div>
+
+                <ul
+                    id="main-menu"
+                    class="mt-4 flex-col gap-4 md:mt-0 md:flex md:flex-row"
+                    :class="menuOpen ? 'flex' : 'hidden'"
+                >
                     <li>
                         <RouterLink to="/" class="nav-link">Inicio</RouterLink>
                     </li>
@@ -65,12 +86,10 @@ onUnmounted(() => unsubscribeFromAuth());
                 </ul>
             </nav>
         </header>
-
         <main class="container mx-auto flex-1 p-4">
             <RouterView />
         </main>
-
-        <footer class="flex items-center justify-center bg-slate-700 p-6 text-white">
+        <footer class="flex items-center justify-center bg-brown p-6 text-cream">
             <p>Entre líneas &copy; 2026</p>
         </footer>
     </div>

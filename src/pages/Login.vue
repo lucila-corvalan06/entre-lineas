@@ -34,40 +34,43 @@ async function handleSubmit() {
 </script>
 
 <template>
+    <section class="mx-auto mt-8 max-w-md rounded-lg border border-sage bg-white p-6 shadow-sm">
+
     <BaseH1>Ingresar</BaseH1>
 
-    <form action="#" @submit.prevent="handleSubmit">
-        <div class="mb-3">
-            <label for="email" class="block mb-2">Email</label>
-            <input
-                type="email"
-                id="email"
-                class="form-field"
-                autocomplete="email"
-                required
-                v-model="user.email"
-            >
-        </div>
-        <div class="mb-3">
-            <label for="password" class="block mb-2">Contraseña</label>
-            <input
-                type="password"
-                id="password"
-                class="form-field"
-                autocomplete="current-password"
-                required
-                v-model="user.password"
-            >
-        </div>
+        <form action="#" @submit.prevent="handleSubmit">
+            <div class="mb-3">
+                <label for="email" class="block mb-2">Email</label>
+                <input
+                    type="email"
+                    id="email"
+                    class="form-field"
+                    autocomplete="email"
+                    required
+                    v-model="user.email"
+                >
+            </div>
+            <div class="mb-3">
+                <label for="password" class="block mb-2">Contraseña</label>
+                <input
+                    type="password"
+                    id="password"
+                    class="form-field"
+                    autocomplete="current-password"
+                    required
+                    v-model="user.password"
+                >
+            </div>
 
-        <p v-if="errorMessage" role="alert" class="mb-3 text-red-700">{{ errorMessage }}</p>
+            <p v-if="errorMessage" role="alert" class="mb-3 text-red-700">{{ errorMessage }}</p>
 
-        <button
-            type="submit"
-            class="btn-primary"
-            :disabled="loading"
-        >
-            {{ loading ? 'Ingresando...' : 'Ingresar' }}
-        </button>
-    </form>
+            <button
+                type="submit"
+                class="btn-primary w-full"
+                :disabled="loading"
+            >
+                {{ loading ? 'Ingresando...' : 'Ingresar' }}
+            </button>
+        </form>
+    </section>
 </template>

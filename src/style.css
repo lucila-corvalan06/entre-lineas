@@ -1,16 +1,24 @@
 @import "tailwindcss";
 
+@theme {
+    --font-sans: 'Poppins', ui-sans-serif, system-ui, sans-serif;
+    --color-cream: #fff9eb;
+    --color-sage: #9a9a6c;
+    --color-terracotta: #a8553a;
+    --color-brown: #6b4423;
+}
+
 @layer components {
     .nav-link {
-        @apply cursor-pointer underline-offset-4 hover:text-slate-200 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white aria-[current=page]:underline;
+        @apply cursor-pointer underline-offset-4 hover:text-sage focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-cream aria-[current=page]:underline;
     }
 
     .btn-primary {
-        @apply cursor-pointer rounded bg-slate-700 px-4 py-2 text-white hover:bg-slate-800 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-slate-900 disabled:cursor-not-allowed disabled:opacity-50;
+        @apply cursor-pointer rounded bg-terracotta px-4 py-2 text-white hover:bg-brown focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brown disabled:cursor-not-allowed disabled:opacity-50;
     }
 
     .form-field {
-        @apply w-full rounded border border-slate-500 p-2 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-slate-900;
+        @apply w-full rounded border border-brown bg-white p-2 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-terracotta;
     }
 
     .link {

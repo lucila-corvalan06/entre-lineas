@@ -69,8 +69,8 @@ onUnmounted(() => unsubscribeFromAuth());
 </script>
 
 <template>
+    <section class="mx-auto mt-8 max-w-2xl rounded-lg border border-sage bg-white p-6 shadow-sm">
     <BaseH1>Nueva reseña</BaseH1>
-
     <form action="#" @submit.prevent="handleSubmit">
         <div class="mb-3">
             <label for="book_title" class="block mb-2">Título del libro</label>
@@ -131,10 +131,11 @@ onUnmounted(() => unsubscribeFromAuth());
 
         <button
             type="submit"
-            class="btn-primary"
+            class="btn-primary w-full"
             :disabled="loading"
         >
             {{ loading ? 'Publicando...' : 'Publicar reseña' }}
         </button>
     </form>
+    </section>
 </template>

@@ -23,7 +23,7 @@ function formatDate(isoDate) {
         <h2 class="text-xl font-bold">{{ review.book_title }}</h2>
         <p>de {{ review.author }} · {{ review.genre }}</p>
         <p class="mb-2">Puntaje: {{ review.rating }} de 5</p>
-        <p class="mb-2">{{ review.body }}</p>
+        <p class="mb-2 break-words whitespace-pre-line">{{ review.body }}</p>
         <footer class="text-sm text-slate-700">
             Reseña de
             <RouterLink :to="`/usuario/${review.user_id}`" class="link">
