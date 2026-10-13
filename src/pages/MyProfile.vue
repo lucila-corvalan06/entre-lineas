@@ -24,7 +24,7 @@ onUnmounted(() => unsubscribeFromAuth());
     <section class="mx-auto mt-8 max-w-2xl rounded-lg border border-sage bg-white p-6 shadow-sm">
         <div class="flex items-end gap-4">
             <BaseH1>Mi perfil</BaseH1>
-            <RouterLink to="/mi-perfil/editar" class="link mb-4">Editar</RouterLink>
+            <RouterLink to="/mi-perfil/editar" class="btn-secondary mb-4 px-3 py-1 text-sm">Editar</RouterLink>
         </div>
 
         <p class="mb-4">{{ user.bio || 'Todavía no escribiste tu biografía.' }}</p>

@@ -70,41 +70,42 @@ onUnmounted(() => unsubscribeFromAuth());
 </script>
 
 <template>
-    <section class="mx-auto mt-8 max-w-md rounded-lg border border-sage bg-white p-6 shadow-sm">
     <BaseH1>Editar mi perfil</BaseH1>
 
-    <form action="#" @submit.prevent="handleSubmit">
-        <div class="mb-3">
-            <label for="display_name" class="block mb-2">Nombre de usuario</label>
-            <input
-                type="text"
-                id="display_name"
-                class="form-field"
-                autocomplete="nickname"
-                v-model="profile.display_name"
+    <section class="mx-auto mt-8 max-w-md rounded-lg border border-sage bg-white p-6 shadow-sm" aria-labelledby="profile-title">
+        <h2 id="profile-title" class="mb-4 text-2xl">Mis datos</h2>
+        <form action="#" @submit.prevent="handleSubmit">
+            <div class="mb-3">
+                <label for="display_name" class="block mb-2">Nombre de usuario</label>
+                <input
+                    type="text"
+                    id="display_name"
+                    class="form-field"
+                    autocomplete="nickname"
+                    v-model="profile.display_name"
+                >
+            </div>
+            <div class="mb-3">
+                <label for="bio" class="block mb-2">Biografía</label>
+                <textarea
+                    id="bio"
+                    class="form-field"
+                    rows="4"
+                    v-model="profile.bio"
+                ></textarea>
+            </div>
+
+            <p v-if="errorMessage" role="alert" class="mb-3 msg-error">{{ errorMessage }}</p>
+            <p v-if="successMessage" role="status" class="mb-3 msg-success">{{ successMessage }}</p>
+
+            <button
+                type="submit"
+                class="btn-primary w-full"
+                :disabled="loading"
             >
-        </div>
-        <div class="mb-3">
-            <label for="bio" class="block mb-2">Biografía</label>
-            <textarea
-                id="bio"
-                class="form-field"
-                rows="4"
-                v-model="profile.bio"
-            ></textarea>
-        </div>
-
-        <p v-if="errorMessage" role="alert" class="mb-3 msg-error">{{ errorMessage }}</p>
-        <p v-if="successMessage" role="status" class="mb-3 msg-success">{{ successMessage }}</p>
-
-        <button
-            type="submit"
-            class="btn-primary w-full"
-            :disabled="loading"
-        >
-            {{ loading ? 'Guardando...' : 'Guardar cambios' }}
-        </button>
-    </form>
+                {{ loading ? 'Guardando...' : 'Guardar cambios' }}
+            </button>
+        </form>
     </section>
 
     <section class="mx-auto mt-6 max-w-md rounded-lg border border-sage bg-white p-6 shadow-sm" aria-labelledby="password-title">
@@ -136,7 +137,8 @@ onUnmounted(() => unsubscribeFromAuth());
             </button>
         </form>
     </section>
+    
     <p class="mx-auto mt-6 max-w-md">
-        <RouterLink to="/mi-perfil" class="link">Volver a mi perfil</RouterLink>
+        <RouterLink to="/mi-perfil" class="btn-secondary">Volver a mi perfil</RouterLink>
     </p>
 </template>
