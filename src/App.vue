@@ -70,7 +70,7 @@ onUnmounted(() => unsubscribeFromAuth());
             <RouterView />
         </main>
 
-        <footer class="flex items-center justify-center bg-gray-800 p-6 text-white">
+        <footer class="flex items-center justify-center bg-slate-700 p-6 text-white">
             <p>Entre líneas &copy; 2026</p>
         </footer>
     </div>
