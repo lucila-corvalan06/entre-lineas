@@ -26,7 +26,7 @@ function formatDate(isoDate) {
         <p class="mb-2">{{ review.body }}</p>
         <footer class="text-sm text-gray-700">
             Reseña de
-            <RouterLink :to="`/usuario/${review.user_id}`" class="underline">
+            <RouterLink :to="`/usuario/${review.user_id}`" class="link">
                 {{ review.user_profiles.display_name || review.user_profiles.email }}
             </RouterLink>
             el <time :datetime="review.created_at">{{ formatDate(review.created_at) }}</time>
