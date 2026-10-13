@@ -11,7 +11,6 @@ const reviews = ref([]);
 const loading = ref(true);
 const errorMessage = ref('');
 
-
 onMounted(async () => {
     // Nos suscribimos a las reseñas nuevas para sumarlas al principio de la lista.
     unsubscribeFromNewReviews = subscribeToNewReviews(newReview => {
@@ -37,7 +36,7 @@ onUnmounted(() => unsubscribeFromNewReviews());
 <template>
     <BaseH1>Últimas reseñas</BaseH1>
 
-    <p v-if="loading">Cargando reseñas...</p>
+    <p v-if="loading" role="status">Cargando reseñas...</p>
     <p v-else-if="errorMessage" role="alert" class="text-red-700">{{ errorMessage }}</p>
     <p v-else-if="reviews.length === 0">Todavía no hay reseñas. ¡Publicá la primera!</p>
 
